@@ -12,6 +12,8 @@ class Category(models.Model):
                 return self.name
 
 
+        
+
 class Customer(models.Model):
         f_name = models.CharField(max_length=50)
         l_name = models.CharField(max_length=50)
