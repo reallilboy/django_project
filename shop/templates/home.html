@@ -1,396 +1,136 @@
+ {% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html dir="rtl">
-    <head>
-        <meta charset="utf-8">
-        <title>best market</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="eCommerce HTML Template Free Download" name="keywords">
-        <meta content="eCommerce HTML Template Free Download" name="description">
+{% block content %}
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-
-        <!-- Google Fonts -->
-
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/slick/slick.css" rel="stylesheet">
-        <link href="lib/slick/slick-theme.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="static/css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-
-        <!-- Nav Bar Start -->
-        <div class="nav">
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                    <a href="#" class="navbar-brand">MENU</a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto">
-                            <a href="index.html" class="nav-item nav-link active">خانه</a>
-                            <a href="cart" class="nav-item nav-link">سبد خرید</a>
-                            <a href="my-account.html" class="nav-item nav-link">حساب کاربری</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">صفحات بیشتر</a>
-                                <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">لیست ارزوها</a>
-                                    <a href="login.html" class="dropdown-item">ورود یا ثبت نام</a>
-                                    <a href="contact.html" class="dropdown-item">ارتباط باما</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!-- Nav Bar End -->
-
-        <!-- Bottom Bar Start -->
-        <div class="bottom-bar">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="img/logo.png" alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="search">
-                            <input type="text" placeholder="Search">
-                            <button><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="user">
-                            <a href="wishlist.html" class="btn wishlist">
-                                <i class="fa fa-heart"></i>
-                                <span>(0)</span>
-                            </a>
-                            <a href="cart.html" class="btn cart">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>(0)</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Bottom Bar End -->
-
-
-
-        <!-- Brand Start -->
-        <div class="brand" >
-            <div class="container-fluid">
-                <div class="brand-slider">
-                    <div class="brand-item"><img src="static/img/brand-1.png" alt=""></div>
-                    <div class="brand-item"><img src="static/img/brand-2.png" alt=""></div>
-                    <div class="brand-item"><img src="static/img/brand-3.png" alt=""></div>
-                    <div class="brand-item"><img src="static/img/brand-4.png" alt=""></div>
-                    <div class="brand-item"><img src="static/img/brand-5.png" alt=""></div>
-                    <div class="brand-item"><img src="static/img/brand-6.png" alt=""></div>
-                </div>
-            </div>
-        </div>
-        <!-- Brand End -->
-
-        <!-- Feature Start-->
-        <div class="feature">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-6 feature-col">
-                        <div class="feature-content">
-                            <i class="fab fa-cc-mastercard"></i>
-                            <h2>پرداخت آسان و امن</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 feature-col">
-                        <div class="feature-content">
-                            <i class="fa fa-truck"></i>
-                            <h2>ارسال سریع و رایگان</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 feature-col">
-                        <div class="feature-content">
-                            <i class="fa fa-sync-alt"></i>
-                            <h2>ضمانت بازگشت وجه و عودت محصول</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 feature-col">
-                        <div class="feature-content">
-                            <i class="fa fa-comments"></i>
-                            <h2>پشتیبانی ۲۴ ساعته</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Feature End-->
-
-        <!-- Category Start-->
-        <div class="category" >
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="category-item ch-400">
-                            <img src="img/category-3.jpg" />
-                            <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="category-item ch-250">
-                            <img src="img/category-4.jpg" />
-                            <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
-                            </a>
-                        </div>
-                        <div class="category-item ch-150">
-                            <img src="img/category-5.jpg" />
-                            <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="category-item ch-150">
-                            <img src="img/category-6.jpg" />
-                            <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
-                            </a>
-                        </div>
-                        <div class="category-item ch-250">
-                            <img src="img/category-7.jpg" />
-                            <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="category-item ch-400">
-                            <img src="img/category-8.jpg" />
-                            <a class="category-name" href="">
-                                <p>Some text goes here that describes the image</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Category End-->
-
-        <!-- Call to Action Start -->
-        <div class="call-to-action">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <h1>بهترین ها را از ما بخواهید</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container-fluid mt-4">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-        {% for produc in products %}
-            {% if produc.is_sale %}
-        <div class="col">
-            <div class="product-item card h-200 shadow-sm">
-            <!-- Product Title -->
-                <div class="product-title card-header bg-transparent border-0">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <h5 class="card-title mb-0">{{ produc.name }}</h5>
-                    </a>
-                    <div class="ratting text-warning">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            <!-- Product Image -->
-            <div class="product-image card-img-top position-relative">
-                <a href="product-detail.html">
-                    <img src="{{ produc.image.url }}" class="img-fluid" alt="{{ produc.name }}" style="width: 90%; height: 300px; object-fit: fill;">
-                </a>
-                <div class="product-action position-absolute top-50 start-50 translate-middle">
-                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-cart-plus"></i></a>
-                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-heart"></i></a>
-                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-search"></i></a>
-                </div>
-            </div>
+            {% for product in products %}
+                <div class="col">
+                    <div class="card h-100 shadow-sm product-card" >
+                        <!-- Product Header -->
+                        <div class="card-header bg-transparent border-0">
 
-            <!-- Product Price -->
-            <div class="product-price card-footer bg-transparent border-0">
-                <span class="badge bg-success">OFF</span>
-
-                <strike>
-                    {{ produc.price }}
-                </strike>
-                <h3 class="card-text text-center">
-                    <span class="text-danger">تومان
-                        {{ produc.sale_price }}
-                        </span>
-
-                    </h3>
-                        <div class="d-grid">
-                             <a class="btn btn-primary" href="#">
-                            <i class="fa fa-shopping-cart"></i> خرید
-                        </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% else %}
-             <div class="col">
-            <div class="product-item card h-200 shadow-sm">
-            <!-- Product Title -->
-                <div class="product-title card-header bg-transparent border-0">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <h5 class="card-title mb-0">{{ produc.name }}</h5>
-                    </a>
-                    <div class="ratting text-warning">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            <!-- Product Image -->
-            <div class="product-image card-img-top position-relative">
-                <a href="product-detail.html">
-                    <img src="{{ produc.image.url }}" class="img-fluid" alt="{{ produc.name }}" style="width: 90%; height: 300px; object-fit: fill;">
-                </a>
-                <div class="product-action position-absolute top-50 start-50 translate-middle">
-                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-cart-plus"></i></a>
-                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-heart"></i></a>
-                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-search"></i></a>
-                </div>
-            </div>
-
-            <!-- Product Price -->
-            <div class="product-price card-footer bg-transparent border-0">
-
-                <h3 class="card-text text-center">
-                    <span class="text-danger">تومان
-                        {{ produc.price }}
-                        </span>
-
-                    </h3>
-                        <div class="d-grid">
-                             <a class="btn btn-primary" href="#">
-                            <i class="fa fa-shopping-cart"></i> خرید
-                        </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                {% endif %}
-            {% endfor %}
-            </div>
-                </div>
-            </div>
-        </div>
-        <!-- Featured Product End -->
-
-
-
-        <!-- Footer Start -->
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <h2>Get in Touch</h2>
-                            <div class="contact-info">
-                                <p><i class="fa fa-map-marker"></i>بهترین هارا از ما بخواهید</p>
+                                <h5 class="card-title mb-0">{{ product.name }}</h5>
+                            </a>
+                            <div class="rating text-warning">
+                                {% for _ in "12345" %}
+                                    <i class="fas fa-star"></i>
+                                {% endfor %}
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <h2>Follow Us</h2>
-                            <div class="contact-info">
-                                <div class="social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                    <a href=""><i class="fab fa-youtube"></i></a>
+                        <!-- Product Image -->
+
+                            <img src="{{ product.image.url }}"
+                                 class="card-img-top product-image"
+                                 alt="{{ product.name }}">
+                        </a>
+
+                        <!-- Product Actions -->
+                        <div class="product-actions">
+                            <button class="btn btn-light btn-sm action-btn add-to-cart">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                            <button class="btn btn-light btn-sm action-btn add-to-wishlist">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <!-- Product Price -->
+                        <div class="card-footer bg-transparent border-0">
+                            {% if product.is_sale %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-success">%{{ product.discount|floatformat:0 }} OFF</span>
+                                    <del class="text-muted">{{ product.price }} تومان</del>
                                 </div>
+                                <h4 class="text-danger my-2">{{ product.sale_price }} تومان</h4>
+                            {% else %}
+                                <h4 class="text-danger">{{ product.price }} تومان</h4>
+                            {% endif %}
+
+                            <div class="d-grid">
+                                <button class="btn btn-primary buy-btn">
+                                    <i class="fas fa-shopping-cart me-2"></i>خرید سریع
+                                </button>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <h2>Company Info</h2>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Condition</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <h2>Purchase Info</h2>
-                            <ul>
-                                <li><a href="#">Pyament Policy</a></li>
-                                <li><a href="#">Shipping Policy</a></li>
-                                <li><a href="#">Return Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
-
-
-            </div>
+            {% endfor %}
         </div>
-        <!-- Footer End -->
+    </div>
+{% endblock %}
 
-        <!-- Footer Bottom Start -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 copyright">
-                        <p>Copyright &copy; <a href="#">Your Site Name</a>. All Rights Reserved</p>
-                    </div>
+{% block extra_css %}
+<style>
+    .product-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-                    <div class="col-md-6 template-by">
-						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer Bottom End -->
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
 
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    .product-image {
+        height: 250px;
+        object-fit: contain;
+        padding: 15px;
+    }
 
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="/mysite/shop/static/lib/easing/easing.js"></script>
-        <script src="/mysite/shop/static/lib/slick/slick.css"></script>
+    .product-actions {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
 
-        <!-- Template Javascript -->
-        <script src="/mysite/shop/static/js/main.js"></script>
-    </body>
-</html>
+    .product-card:hover .product-actions {
+        opacity: 1;
+    }
+
+    .action-btn {
+        margin: 2px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .buy-btn {
+        transition: all 0.3s;
+    }
+
+    .buy-btn:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .rating {
+        font-size: 0.9rem;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add to cart functionality
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Implement cart logic here
+            console.log('Added to cart:', '{{ product.id }}');
+        });
+    });
+
+    // Add to wishlist functionality
+    document.querySelectorAll('.add-to-wishlist').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Implement wishlist logic here
+            console.log('Added to wishlist:', '{{ product.id }}');
+        });
+    });
+});
+</script>
+{% endblock %}
