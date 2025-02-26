@@ -25,11 +25,13 @@ class Customer(models.Model):
 
 class Product(models.Model):
         name = models.CharField(max_length=60)
-        price = models.DecimalField(max_digits=50,default=0,decimal_places=2)
+        price = models.DecimalField(max_digits=50,default=0,decimal_places=0)
         category = models.ForeignKey(Category,on_delete=models.CASCADE, default=1)
         #desc = models.CharField(max_length=200,default='',blank=True,null=True)
         image = models.ImageField(upload_to='uploads/product')
         publish_time = models.DateTimeField(default=timezone.now)
+        is_sale = models.BooleanField(default=False)
+        sale_price = models.DecimalField(max_digits=50,default=0,decimal_places=0)
 
         def __str__(self):
                 return self.name

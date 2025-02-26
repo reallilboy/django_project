@@ -92,7 +92,7 @@
 
 
         <!-- Brand Start -->
-        <div class="brand" dir="ltr">
+        <div class="brand" >
             <div class="container-fluid">
                 <div class="brand-slider">
                     <div class="brand-item"><img src="static/img/brand-1.png" alt=""></div>
@@ -204,6 +204,7 @@
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {% for produc in products %}
+            {% if produc.is_sale %}
         <div class="col">
             <div class="product-item card h-200 shadow-sm">
             <!-- Product Title -->
@@ -222,7 +223,7 @@
             <!-- Product Image -->
             <div class="product-image card-img-top position-relative">
                 <a href="product-detail.html">
-                    <img src="{{ produc.image.url }}" class="img-fluid" alt="{{ produc.name }}" style="width: 100%; height: 300px; object-fit: fill;">
+                    <img src="{{ produc.image.url }}" class="img-fluid" alt="{{ produc.name }}" style="width: 90%; height: 300px; object-fit: fill;">
                 </a>
                 <div class="product-action position-absolute top-50 start-50 translate-middle">
                     <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-cart-plus"></i></a>
@@ -233,9 +234,56 @@
 
             <!-- Product Price -->
             <div class="product-price card-footer bg-transparent border-0">
+                <span class="badge bg-success">OFF</span>
+
                 <strike>
                     {{ produc.price }}
                 </strike>
+                <h3 class="card-text text-center">
+                    <span class="text-danger">تومان
+                        {{ produc.sale_price }}
+                        </span>
+
+                    </h3>
+                        <div class="d-grid">
+                             <a class="btn btn-primary" href="#">
+                            <i class="fa fa-shopping-cart"></i> خرید
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+             <div class="col">
+            <div class="product-item card h-200 shadow-sm">
+            <!-- Product Title -->
+                <div class="product-title card-header bg-transparent border-0">
+                    <a href="#" class="text-decoration-none text-dark">
+                        <h5 class="card-title mb-0">{{ produc.name }}</h5>
+                    </a>
+                    <div class="ratting text-warning">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            <!-- Product Image -->
+            <div class="product-image card-img-top position-relative">
+                <a href="product-detail.html">
+                    <img src="{{ produc.image.url }}" class="img-fluid" alt="{{ produc.name }}" style="width: 90%; height: 300px; object-fit: fill;">
+                </a>
+                <div class="product-action position-absolute top-50 start-50 translate-middle">
+                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-cart-plus"></i></a>
+                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-heart"></i></a>
+                    <a href="#" class="btn btn-light btn-sm mx-1"><i class="fa fa-search"></i></a>
+                </div>
+            </div>
+
+            <!-- Product Price -->
+            <div class="product-price card-footer bg-transparent border-0">
+
                 <h3 class="card-text text-center">
                     <span class="text-danger">تومان
                         {{ produc.price }}
@@ -250,6 +298,7 @@
                     </div>
                 </div>
             </div>
+                {% endif %}
             {% endfor %}
             </div>
                 </div>
