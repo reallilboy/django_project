@@ -80,16 +80,16 @@
         <h2>Sign Up</h2>
         <form id="signup-form" action="{% url 'signup' %}" method="POST">
             {% csrf_token %}
-            <label class="form-label">u</label>
+            <label class="form-label">نام کاربری</label>
                         {{ form.username }}
                         {{ form.username.errors }}
-            <label class="form-label">e</label>
+            <label class="form-label">ایمیل</label>
                         {{ form.email }}
                         {{ form.email.errors }}
-            <label class="form-label">p1</label>
+            <label class="form-label">رمز عبور</label>
                         {{ form.password1 }}
                         {{ form.password1.errors }}
-            <label class="form-label">p2</label>
+            <label class="form-label">تکرار رمز عبور</label>
                         {{ form.password2 }}
                         {{ form.password2.errors }}
             <div id="password-error" class="error-message">Passwords do not match.</div>
