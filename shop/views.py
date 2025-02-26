@@ -2,6 +2,14 @@ from django.shortcuts import render,redirect
 from .models import Product
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from .forms import CustomUserCreationForm
+
+
+
+
 # Create your views here.
 
 def home(request):
@@ -36,4 +44,16 @@ def logout_user(request):
         return redirect('home')
 
 def signup_user(request):
-        return render(request,'signup.html',{})
+        if request.method == 'POST':
+                form = CustomUserCreationForm(request.POST)
+                if form.is_valid():
+                        user = form.save(commit=False)
+                        user.email = form.cleaned_data['email']  # ذخیره ایمیل
+                        user.save()
+                        messages.success(request, f'حساب کاربری {user.username} با موفقیت ساخته شد!')
+                        return redirect('login')
+                else:
+                        messages.error(request, 'خطا در ثبت نام! لطفا اطلاعات را بررسی کنید.')
+        else:
+                form = CustomUserCreationForm()
+        return render(request, 'signup.html', {'form': form})
