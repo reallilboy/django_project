@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.utils import timezone
 # Create your models here.
 
 
@@ -7,12 +8,13 @@ import datetime
 class Category(models.Model):
         name = models.CharField(max_length=50)
 
-
         def __str__(self):
                 return self.name
 
+        class Meta:
+                verbose_name_plural = 'categories'
 
-        
+
 
 class Customer(models.Model):
         f_name = models.CharField(max_length=50)
@@ -25,8 +27,9 @@ class Product(models.Model):
         name = models.CharField(max_length=60)
         price = models.DecimalField(max_digits=50,default=0,decimal_places=2)
         category = models.ForeignKey(Category,on_delete=models.CASCADE, default=1)
-        desc = models.CharField(max_length=200,default='',blank=True,null=True)
+        #desc = models.CharField(max_length=200,default='',blank=True,null=True)
         image = models.ImageField(upload_to='uploads/product')
+        publish_time = models.DateTimeField(default=timezone.now)
 
         def __str__(self):
                 return self.name
